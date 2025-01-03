@@ -1,7 +1,0 @@
-- 👋 Hi, I’m @Davenf1
-- 👀 I’m interested in programming
-- 🌱 I’m currently learning javascript
-- 💞️ I’m looking to collaborate on web projects
-- 📫 How to reach me @duntopper on telegram
-- 😄 Pronouns: he/him
-- ⚡ Fun fact: I always had a passion for drawing... why am I even here?
