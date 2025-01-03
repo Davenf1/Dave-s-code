@@ -1,0 +1,748 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root {
+    --background-color: rgb(19, 18, 18);
+    --primary-color: black;
+    --secondary-color: #ff8717;
+    --text-color: white;
+}
+html{
+   font-size: 62.5%;
+   overflow-x: hidden; 
+}
+body {
+    overflow-x: hidden;
+    background: var(--background-color)
+}
+.Header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding: 3rem 9%;
+   background-color: var(--primary-color);
+   backdrop-filter: blur(10px);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   z-index: 100;
+}
+    /* giant name at the left side of the header */
+.logo {
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+    /* white part of the name at the header */
+.first-part {
+    color: white;
+} 
+    /* orange part of the name at the header*/
+.second-part {
+    color: var(--secondary-color);
+}
+.logo:hover {
+    transform: scale(1.1);
+}
+    /* contents on the right side of the header*/
+.navbar a {
+    font-size: 1.6rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+    border-bottom: 3px solid transparent;
+    text-decoration: none;
+}
+.navbar a:hover,
+.navbar a.active {
+    color: var(--secondary-color);
+     border-bottom: 3px solid var(--secondary-color);
+}
+#menuicon {
+    font-size: 3.6rem;
+    color: var(--secondary-color);
+    display: none;
+    cursor: pointer;
+}
+    /* from the end of the header to Hire me */
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 5rem;
+}
+.firstsum {
+    text-align: center;
+}
+    /* the home section */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    cursor: default;
+    color: var(--text-color);
+}
+    /* all the text content in the home section */
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 3rem;
+}
+    /* the name decleration under the profile pic */
+.home h1 {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+}
+.hermecius {
+    color: var(--secondary-color);
+}   
+    /* the animated text */
+.home h3 {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+}
+.pic {
+    border-radius: 50%;
+}
+.pic img {
+    position: relative;
+    top: 0rem;
+    width: 22vw;
+    margin-top: 4rem;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--secondary-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}  
+    /* makes the profile pic to glow */
+.pic img:hover {
+    box-shadow: 0 0 50px var(--secondary-color),
+                0 0 100px var(--secondary-color);
+}
+    /* the summary under the animated text */
+.home p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    max-width: 1000px;
+}
+    /* social media icons under the summary */
+.socials a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: transparent;
+    border: 0.2rem solid var(--secondary-color);
+    font-size: 1.8rem;
+    border-radius: 50%;
+    color: var(--secondary-color);
+    margin: 3rem 2rem 3rem 0;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+    /* animation for the social media icons */
+.socials a:hover {
+    color: white;
+    transform: scale(1.3)translate(-3px);
+    box-shadow: 0 0 25px var(--secondary-color);
+    background-color: var(--secondary-color);
+}   
+    /* the hire me button */
+.hire {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    border: 2px solid white;
+    padding: 1rem 2rem;
+    border-radius: 4rem;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+}
+    /* the animation for the hire me button */
+.hire:hover {
+    transform: scale(1.05);
+    color: var(--secondary-color);
+    box-shadow: 0 0 25px var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+    /* text animation */
+.text-animation {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+.text-animation span {
+    position: relative;
+}
+.text-animation span::before {
+    content: 'Web Developer';
+    color: var(--secondary-color);
+    animation: words 20s infinite;
+}
+.text-animation span::after {
+    content: '';
+    background-color: var(--background-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--secondary-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+@keyframes cursor {
+    to {
+        border-left: 2px solid var(--secondary-color);
+    }
+}
+    /* intervals for the text animation */
+@keyframes words {
+    0%,
+    20% {
+        content: 'Web Developer';
+    }
+    21%,
+    40% {
+        content: 'Code Monkey';
+    }
+    41%,
+    60% {
+        content: 'Crypto Trader';
+    }
+    61%,
+    80% {
+        content: 'Discord Mod';
+    }
+    81%,
+    100% {
+        content: 'Mobile Gamer';
+    }
+}
+@keyframes typing {
+    10%,
+    15%,
+    30%,
+    35%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+        width: 0;
+    }
+
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+        width: calc(100% + 8px);
+    }
+}
+    /* the about section*/
+.about {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10rem;
+    gap: 5rem;
+    color: var(--text-color);
+}
+    /* all the text content in the about section*/
+.about-content {
+    padding-left: 10px;
+    position: relative;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2%;
+    cursor: default;
+}
+    /* the heading ABOUT ME */
+.heading-2 {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+    /* the second word in the ABOUT ME heading  ME */
+.about-me {
+    color: var(--secondary-color);
+}
+    /* the second pic on this site */
+.about-pic {
+    border-radius: 50%;
+}
+.about-pic img {
+    position: relative;
+    width: 22vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--secondary-color);
+    top: 1rem;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+    /* makes the second pic glow */
+.about-pic img:hover {
+    box-shadow: 0 0 50px var(--secondary-color),
+                0 0 100px var(--secondary-color);
+}
+    /* the small text in the about section */
+.about-sum {
+    font-size: 1.5rem;
+    font-weight: 500;
+    max-width: 1200px;
+    line-height: 1;
+}
+    /* the Read more button in the about section */
+.read-more {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--secondary-color);
+    margin-top: 1rem;
+    background-color: transparent;
+    line-height: 2;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+.read-more:hover {
+    transform: scale(1.1)translate(-3px);
+}
+    /* the entire of the third section of this site */
+.my-services {
+    position: relative;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    gap: 1rem;
+}
+    /* covers the 4 boxes that display the skill content */
+.services-content {
+    position: relative;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+    /* the heading MY SERVICES */
+.heading-3 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 50px;
+    cursor: default;
+    line-height: 1;
+}
+    /* the 2nd word the the heading   SERVICES */
+.services {
+    color: white;
+}
+    /* the first grid box in MY SERVICES */
+.services-1 {
+    position: relative;
+    width: 40vw;
+    align-items: center;
+    background-color: var(--secondary-color);
+    border-radius: 2rem;
+    padding: 1rem;
+    line-height: 2;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--secondary-color);
+    transition: 0.3s ease-in-out;
+}
+.services-1:hover {
+    transform: scale(1.1) translate(3px);
+}
+    /* the heading in the first grid box */
+.web-dev {
+    font-size: 3rem;
+    position: relative;
+    justify-self: center;
+    line-height: 1;
+    padding-bottom: 2rem;
+}
+    /* the other content in the first grid box */
+.web-dev-pros {
+    font-size: 2rem;
+    position: relative;
+    justify-content: center;
+}
+    /* the second grid box in MY SERVICES */
+.services-2 {
+    position: relative;
+    width: 40vw;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-radius: 2rem;
+    padding: 1rem;
+    line-height: 2;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--secondary-color);
+    transition: 0.3s ease-in-out;
+}
+.services-2:hover {
+    transform: scale(1.1) translate(3px);
+}
+    /* the heading in the second grid box */
+.crypt-trade {
+    color: var(--secondary-color);
+    font-size: 3rem;
+    position: relative;
+    justify-self: center;
+    line-height: 1;
+    padding-bottom: 2rem;
+}
+    /* the other content in the second grid box */
+.trade-pros {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    position: relative;
+    justify-content: center;
+}
+    /* third grid box */
+.services-3 {
+    position: relative;
+    width: 40vw;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-radius: 2rem;
+    padding: 1rem;
+    line-height: 2;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--secondary-color);
+    transition: 0.3s ease-in-out;
+}
+.services-3:hover {
+    transform: scale(1.1) translate(3px);
+}
+    /* heading in the third grid box */
+.vid-edit {
+    color: var(--secondary-color);
+    font-size: 3rem;
+    position: relative;
+    justify-self: center;
+    line-height: 1;
+    padding-bottom: 2rem;
+}
+    /* other content in third grid box */
+.vid-edit-pros {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    position: relative;
+    justify-content: center;
+}
+    /* 4th grid box */
+.services-4 {
+    position: relative;
+    width: 40vw;
+    align-items: center;
+    background-color: var(--secondary-color);
+    border-radius: 2rem;
+    padding: 1rem;
+    line-height: 2;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--secondary-color);
+    transition: 0.3s ease-in-out;
+}
+.services-4:hover {
+    transform: scale(1.1) translate(3px);
+}
+    /* heading in 4th grid box */
+.dis-mod {
+    color: var(--primary-color);
+    font-size: 3rem;
+    position: relative;
+    justify-self: center;
+    line-height: 1;
+    padding-bottom: 2rem;
+}
+    /* other content in 4th grid box */
+.dis-mod-pros {
+    color: var(--primary-color);
+    font-size: 2rem;
+    position: relative;
+    justify-content: center;
+}
+    /* the HIRE ME section */
+.hire-me {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+form {
+    text-align: center;
+    padding-top: 3rem;
+}
+.heading-4 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    cursor: default;
+} 
+.me {
+    color: var(--secondary-color);
+}
+.name {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+.email {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+.message {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+    /* the message field for text */
+textarea {
+    width: 100%;       
+    padding: 20px;     
+    margin: 10px 0;
+    color: white;
+    background-color: var(--primary-color);    
+    border: 2px solid var(--secondary-color); 
+    border-radius: 3rem; 
+    font-size: 1.5rem;
+    font-weight: 300;
+    resize: vertical;  
+    outline: none;  
+    word-wrap: break-word; 
+  }
+textarea:focus {
+    background-color: var(--primary-color);
+    color: white;
+    outline: none;
+}
+    /* the name and email field for text */ 
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: var(--primary-color);
+    color: white;
+    outline: none;
+    border: 2px solid var(--secondary-color);
+    border-radius: 3rem;
+}
+button { 
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 3rem;
+}
+input:focus {
+    background-color: var(--primary-color);
+    color: white;
+    outline: none;
+}
+input:-webkit-autofill {
+    background-color: black !important;
+    color: white !important;
+    -webkit-text-fill-color: white !important; /* Force text color */
+    transition: background-color 5000s ease-in-out 0s; /* Hack to override */
+}
+ input:-internal-autofill-selected {
+    background-color: black !important;
+    color: white !important;
+}
+    /* the SUBMIT button */
+.submit {
+    color: white;
+    font-size: 2rem;
+    font-weight: 500;
+    max-width: 20rem;
+    background-color: var(--secondary-color);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--secondary-color);
+    transition: 0.3s ease-in-out;
+}
+.submit:hover {
+    transform: scale(1.1) translate(-2px);
+}
+    /* the footer of the website */
+.footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    cursor: default;
+}
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+    /* all the links in the footer */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.footer-links li {
+    display: inline;
+}
+.footer-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+.footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    margin: 0 5px;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width:1280px) {
+   html {
+    font-size: 55%;
+   } 
+   .services-content {
+    padding-bottom: 7rem;
+    grid-template-columns: repeat(2,1fr);
+    margin: 0 5rem;
+   }
+}
+@media (max-width:991px) {
+    header {
+        padding: 2rem 3%;  
+    }
+    section {
+        padding: 10rem 3% 2rem;
+    }
+    .my-services {
+        padding-bottom: 7rem;   
+    }
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+@media (max-width:895px) {
+    #menuicon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0%;
+        width: 50%;
+        padding: 1rem 3%;
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(20px);
+        border-bottom-left-radius: 2rem;
+        border-left: 2px solid var(--secondary-color);
+        border-bottom: 2px solid var(--secondary-color);
+        display: none;
+    }
+    .navbar.active {
+        display: block;
+    }
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 2rem 0;
+        color: white;
+    }
+    .home {
+        flex-direction: column;
+        margin: 5rem 4;
+    }
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+    .home-content h1 {
+        font-size: 8rem;
+        margin-top: 3rem;       
+    }
+    .home-content p {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .pic img {
+        width: 40vw;     
+    }
+    .about-content {
+        margin: 0 2rem 4rem;
+    }
+    .about-pic {
+        width: 40vw;
+    }
+    .about-pic img {
+        width: 40vw;
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        margin-left: 1rem;
+    }
+    .my-services h2 {
+        margin-bottom: 3rem;
+    }
+    .services-content {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .services-1 {
+        width: 70vw;
+    }
+    .services-2 {
+        width: 70vw;
+    }
+    .services-3 {
+        width: 70vw;
+    } 
+    .services-4 {
+        width: 70vw;
+    }  
+}
