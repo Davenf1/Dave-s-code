@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Form</title>
+    <meta name="description" content="Just making a mock fillout form">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+<body>
+    <img src="IMG_E3401.JPG" alt="Fillout Form Logo">
+
+    <h1>Fillout Form</h1>
+    <p class="sum">Please make sure all details are complete.</p>
+    <p class="sum">Fill out the form just <i><b>once</b></i> for each task.</p>
+    
+    <div class="form">
+       <fieldset>
+          <label for="tgname"> What is your <i><b>Telegram</b></i> handle </label>
+          <input id="tgname" type="text" placeholder="@duntopper" required/>
+       </fieldset>
+
+       <fieldset>
+          <label for="xname"> What is your <i><b>Twitter</b></i> Username </label>
+          <input id="xname" type="text" placeholder="@daevid_nf" required/>
+       </fieldset>
+
+       <fieldset>
+          <label for="date"> Date of Invoice </label>
+          <input id="date" type="date" required/>
+       </fieldset>
+
+       <fieldset>
+          <label for="tasklinks"> Provide all revelant task links here (Link of the tweet from telegram)</label> 
+          <input id="tasklinks" type="url" placeholder="e.g. @https://x.com/daevid_nf?s=21" required/>
+       </fieldset>
+
+       <fieldset>
+          <label for="engage"> What is the Invoice for? (Select all that apply) </label> 
+          <select id="engage" name="engage" required>
+             <option value="" disabled select> Like, Comment, Retweet...</option>
+             <option value="liked"> Like </option> 
+             <option value="commented"> Comment </option>
+             <option value="retweeted"> Retweet </option>
+             <option value="quoted"> Quote Tweet </option>
+             <option value="bookmarked"> Bookmark </option>
+          </select>
+       </fieldset>
+
+       <fieldset>
+          <label for="project"> What project is this task for (read the Tweet Content or check the task on Telegram) </label>
+          <select id="project" name="project" required>
+             <option value="" hidden></option>
+             <option value="mento labs">Mento Labs</option>
+             <option value="near protocol">Near Protocol</option>
+             <option value="celo">CELO</option>
+             <option value="other">Other</option>
+          </select>
+       </fieldset>
+
+       <fieldset>
+          <label for="total">How much total in $USD</label>
+          <input id="total" type="text" name="total" value="5" required/>
+       </fieldset>   
+
+       <fieldset>
+          <label for="proof1">Proof of Like, RT, Bookmark</label>
+          <div class="upload-proof">
+          <input type="file" style="display: none;" id="proof1" name="proof1" required/>
+          <img src="upload icon.jpg" class="upload">
+          <span id="draganddrop">Upload file here</span>
+          </div>
+       </fieldset>
+      
+       <fieldset>
+          <label for="proof2">Proof of Comment</label>
+          <div class="upload-proof">
+          <input type="file" style="display: none;" id="proof2" name="proof2" required/>
+          <img src="upload icon.jpg" class="upload">
+          <span id="draganddrop">Upload file here</span>
+          </div>
+       </fieldset>
+
+       <fieldset>
+          <label for="wallet"> Solana USDC address (please avoid using a CEX wallet) </label>
+          <textarea name="wallet" id="wallet" rows="5" required></textarea>
+       </fieldset>
+
+       <button type="submit" name="submit" class="submit">Submit</button>
+    </div>
+
+       <p class="disclaimer">Never share passwords in fillout form. <a href="#">report malicious form</a></p>
+       
+       <p class="made">Made with <b class="fillbold">Fillout</b></p>   
+</body>
+
+</html>
